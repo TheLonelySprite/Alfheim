@@ -1,6 +1,7 @@
 package com.github.thelonelysprite.alfheim;
 
 import com.github.thelonelysprite.alfheim.blocks.AddonBlocks;
+import com.github.thelonelysprite.alfheim.dimension.WorldProviderAlfheim;
 import com.github.thelonelysprite.alfheim.items.ModItems;
 import com.github.thelonelysprite.alfheim.proxy.CommonProxy;
 import com.github.thelonelysprite.alfheim.recipes.CraftingRecipes;
@@ -15,6 +16,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.DimensionManager;
 
 @Mod(modid = Constants.MODID, version = Constants.VERSION, dependencies = Constants.DEPENDENCIES)
 public class Alfheim {
@@ -52,6 +54,7 @@ public class Alfheim {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
+       DimensionManager.registerProviderType(-98, WorldProviderAlfheim.class, true);
+       DimensionManager.registerDimension(-98,-98);
     }
 }
