@@ -1,0 +1,3 @@
+tile.examplemod:block.name=Test Block
+item.examplemod:name.name=Test Item
+itemGroup.examplemod=Test Mod
