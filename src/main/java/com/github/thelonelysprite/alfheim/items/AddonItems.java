@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 /**
  * Created by justin on 19/09/2014.
  */
-public class ModItems {
+public class AddonItems {
 
     public static Item exampleItem;
 

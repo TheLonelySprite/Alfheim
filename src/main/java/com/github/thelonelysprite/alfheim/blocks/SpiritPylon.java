@@ -4,6 +4,7 @@ package com.github.thelonelysprite.alfheim.blocks;
  * Created by justin on 06/10/2014.
  */
 
+import com.github.thelonelysprite.alfheim.Teleport;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -94,8 +95,10 @@ public class SpiritPylon extends Container implements ILexiconable, IInfusionSta
 
     @Override
     public boolean onBlockActivated(World p_149727_1_, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer p_149727_5_, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_) {
-        if (!p_149727_1_.isRemote) {
-            p_149727_5_.travelToDimension(-98);
+        if(p_149727_5_.dimension == -98){
+            Teleport.teleportEntity(p_149727_5_, 0);
+        }else {
+            Teleport.teleportEntity(p_149727_5_, -98);
         }
         return false;
     }

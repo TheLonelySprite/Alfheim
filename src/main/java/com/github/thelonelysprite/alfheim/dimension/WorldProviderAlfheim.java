@@ -1,7 +1,6 @@
 package com.github.thelonelysprite.alfheim.dimension;
 
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.WorldType;
 import net.minecraft.world.chunk.IChunkProvider;
 
 /**
@@ -21,9 +20,7 @@ public class WorldProviderAlfheim extends WorldProvider {
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerAlfheim(worldObj.getSeed(), worldObj.getWorldInfo().getTerrainType());
-        this.isHellWorld = false;
-        this.hasNoSky = false;
+        this.worldChunkMgr = new WorldChunkManagerAlfheim(worldObj);
         this.dimensionId = -98;
     }
 
@@ -50,4 +47,6 @@ public class WorldProviderAlfheim extends WorldProvider {
     {
         return false;
     }
+
+
 }

@@ -24,4 +24,6 @@ public class ItemBlockWithMetaAndName extends ItemBlockWithMetadata {
         return super.getUnlocalizedName(par1ItemStack) + par1ItemStack.getItemDamage();
     }
 
+
+
 }

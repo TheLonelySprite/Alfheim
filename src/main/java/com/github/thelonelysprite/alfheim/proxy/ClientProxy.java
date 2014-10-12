@@ -2,7 +2,7 @@ package com.github.thelonelysprite.alfheim.proxy;
 
 import com.github.thelonelysprite.alfheim.blocks.AddonBlocks;
 import com.github.thelonelysprite.alfheim.blocks.TileSpiritPylon;
-import com.github.thelonelysprite.alfheim.items.ModItems;
+import com.github.thelonelysprite.alfheim.items.AddonItems;
 import com.github.thelonelysprite.alfheim.renderers.RenderPylonItem;
 import com.github.thelonelysprite.alfheim.renderers.PylonRenderer;
 import com.github.thelonelysprite.alfheim.renderers.RenderTransparentItem;
@@ -17,7 +17,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerItemRenderers() {
-    MinecraftForgeClient.registerItemRenderer(ModItems.exampleItem, new RenderTransparentItem());
+    MinecraftForgeClient.registerItemRenderer(AddonItems.exampleItem, new RenderTransparentItem());
     MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(AddonBlocks.spiritPylon), new RenderPylonItem());
     }
 
