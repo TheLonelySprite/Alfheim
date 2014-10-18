@@ -26,7 +26,7 @@ public abstract class Container extends ModBlock implements ITileEntityProvider{
     @Override
     public Block setBlockName(String par1Str) {
         if(shouldRegisterInNameSet())
-            GameRegistry.registerBlock(this, ItemBlockMod.class, par1Str);
+            GameRegistry.registerBlock(this, ItemBlockWithMetaAndName.class, par1Str);
         return super.setBlockName(par1Str);
     }
 

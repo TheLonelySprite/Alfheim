@@ -4,6 +4,7 @@ import com.github.thelonelysprite.alfheim.blocks.AddonBlocks;
 import com.github.thelonelysprite.alfheim.dimension.WorldProviderAlfheim;
 import com.github.thelonelysprite.alfheim.handlers.ForgeEventHandler;
 import com.github.thelonelysprite.alfheim.items.AddonItems;
+import com.github.thelonelysprite.alfheim.lexicon.AddonData;
 import com.github.thelonelysprite.alfheim.proxy.CommonProxy;
 import com.github.thelonelysprite.alfheim.recipes.CraftingRecipes;
 import com.github.thelonelysprite.alfheim.recipes.FurnaceRecipes;
@@ -42,6 +43,7 @@ public class Alfheim {
         CraftingRecipes.init();
         FurnaceRecipes.init();
         ModComp.init();
+        AddonData.init();
         //Constants.log.info(AddonItems.exampleItem.getUnlocalizedName());
     }
 

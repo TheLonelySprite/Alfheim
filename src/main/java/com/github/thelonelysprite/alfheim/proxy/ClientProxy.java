@@ -1,8 +1,10 @@
 package com.github.thelonelysprite.alfheim.proxy;
 
 import com.github.thelonelysprite.alfheim.blocks.AddonBlocks;
+import com.github.thelonelysprite.alfheim.blocks.TileAlfPortal2;
 import com.github.thelonelysprite.alfheim.blocks.TileSpiritPylon;
 import com.github.thelonelysprite.alfheim.items.AddonItems;
+import com.github.thelonelysprite.alfheim.renderers.AlfPortal2Renderer;
 import com.github.thelonelysprite.alfheim.renderers.RenderPylonItem;
 import com.github.thelonelysprite.alfheim.renderers.PylonRenderer;
 import com.github.thelonelysprite.alfheim.renderers.RenderTransparentItem;
@@ -26,5 +28,6 @@ public class ClientProxy extends CommonProxy {
 
 
         ClientRegistry.bindTileEntitySpecialRenderer(TileSpiritPylon.class, new PylonRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileAlfPortal2.class, new AlfPortal2Renderer());
     }
 }

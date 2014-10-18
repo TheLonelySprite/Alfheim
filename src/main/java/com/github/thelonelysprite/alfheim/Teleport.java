@@ -1,5 +1,6 @@
 package com.github.thelonelysprite.alfheim;
 
+import com.github.thelonelysprite.alfheim.blocks.TileAlfPortal2;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -7,10 +8,14 @@ import net.minecraft.network.play.server.S07PacketRespawn;
 import net.minecraft.network.play.server.S1DPacketEntityEffect;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChunkCoordinates;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldServer;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by justin on 07/10/2014.
@@ -62,16 +67,52 @@ public class Teleport {
     }
 
     public static void transferEntityToWorld(Entity entity, int dimension, WorldServer worldserver, WorldServer worldserver1) {
-        WorldProvider pOld = worldserver.provider;
-        WorldProvider pNew = worldserver1.provider;
-        double moveFactor = pOld.getMovementFactor() / pNew.getMovementFactor();
-        double d0 = entity.posX * moveFactor;
-        double d1 = entity.posZ * moveFactor;
-        if (entity.isEntityAlive()) {
-            worldserver1.spawnEntityInWorld(entity);
-            entity.setLocationAndAngles(d0, entity.posY, d1, entity.rotationYaw, entity.rotationPitch);
-            worldserver1.updateEntityWithOptionalForce(entity, false);
+        //if (worldserver1.provider.dimensionId == -98) {
+            WorldProvider pOld = worldserver.provider;
+            WorldProvider pNew = worldserver1.provider;
+            if (entity.isEntityAlive()) {
+                worldserver1.spawnEntityInWorld(entity);
+                ChunkCoordinates chunkcoordinates = worldserver1.getSpawnPoint();
+                chunkcoordinates.posY = pNew.worldObj.getTopSolidOrLiquidBlock(chunkcoordinates.posX, chunkcoordinates.posZ);
+                entity.setLocationAndAngles((double) chunkcoordinates.posX, (double) chunkcoordinates.posY, (double) chunkcoordinates.posZ, entity.rotationYaw, entity.rotationPitch);
+                worldserver1.updateEntityWithOptionalForce(entity, false);
+            }
+            entity.setWorld(worldserver1);
+        /*}else {
+            TileEntity tileEntity = getPortal(worldserver1);
+
+            if (tileEntity != null) {
+                int x = tileEntity.xCoord;
+                int z = tileEntity.zCoord;
+                int y = tileEntity.yCoord;
+                if (entity.isEntityAlive()) {
+                    worldserver1.spawnEntityInWorld(entity);
+                    entity.setLocationAndAngles((double) x, (double) y, (double) z, entity.rotationYaw, entity.rotationPitch);
+                    worldserver1.updateEntityWithOptionalForce(entity, false);
+                }
+                entity.setWorld(worldserver1);
+            }else{
+                WorldProvider pOld = worldserver.provider;
+                WorldProvider pNew = worldserver1.provider;
+                if (entity.isEntityAlive()) {
+                    worldserver1.spawnEntityInWorld(entity);
+                    ChunkCoordinates chunkcoordinates = worldserver1.getSpawnPoint();
+                    chunkcoordinates.posY = pNew.worldObj.getTopSolidOrLiquidBlock(chunkcoordinates.posX, chunkcoordinates.posZ);
+                    entity.setLocationAndAngles((double) chunkcoordinates.posX, (double) chunkcoordinates.posY, (double) chunkcoordinates.posZ, entity.rotationYaw, entity.rotationPitch);
+                    worldserver1.updateEntityWithOptionalForce(entity, false);
+                }
+                entity.setWorld(worldserver1);
+            }
+
+        }*/
+    }
+
+    static TileEntity getPortal(World worldserver1){
+        for (TileEntity te : (List<TileEntity>)worldserver1.loadedTileEntityList){
+            if (te instanceof TileAlfPortal2){
+                return te;
+            }
         }
-        entity.setWorld(worldserver1);
+        return null;
     }
 }

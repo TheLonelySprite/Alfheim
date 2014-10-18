@@ -12,8 +12,11 @@ import vazkii.botania.common.block.BlockPylon;
  */
 public class AddonBlocks {
     public static Block spiritPylon;
+    public static Block alfPortal;
+
     public static void init(){
         spiritPylon = new SpiritPylon();
+        alfPortal = new BlockAlfPortal2();
 
     }
 }
