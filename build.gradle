@@ -40,7 +40,8 @@ dependencies {
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
     compile files (
            'Baubles-deobf.jar',
-           'Botania-Deobf.jar'
+           'Botania-Deobf.jar',
+           'Thaumcraft-Deobf.jar'
     )
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
