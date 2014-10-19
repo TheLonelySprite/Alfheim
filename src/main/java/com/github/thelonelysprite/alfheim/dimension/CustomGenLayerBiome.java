@@ -1,8 +1,11 @@
 package com.github.thelonelysprite.alfheim.dimension;
 
+import com.github.thelonelysprite.alfheim.dimension.biomes.ElvenForestBiome;
+import com.github.thelonelysprite.alfheim.dimension.biomes.ElvenPlainsBiome;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenPlains;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.common.BiomeManager;
@@ -13,6 +16,8 @@ import java.util.List;
 
 public class CustomGenLayerBiome extends GenLayer {
 	private List<BiomeEntry> desertBiomes = new ArrayList<BiomeEntry>();
+    public static final BiomeGenBase elvenPlains = (new ElvenPlainsBiome(66)).setColor(9286496).setBiomeName("Elven Plains");
+    public static final BiomeGenBase elvenForest = (new ElvenForestBiome(67)).setColor(9286496).setBiomeName("Elven Forest");
 	protected static final BiomeGenBase.Height height_Oceans = new BiomeGenBase.Height(-2.0F, 0.1F);
 
 	public CustomGenLayerBiome(long par1, GenLayer par3GenLayer, WorldType par4WorldType) {
@@ -22,9 +27,9 @@ public class CustomGenLayerBiome extends GenLayer {
 
 		this.desertBiomes.addAll(BiomeManager.desertBiomes);
 
-		desertBiomes.add(new BiomeEntry(BiomeGenBase.plains, 30));
+		desertBiomes.add(new BiomeEntry(elvenPlains, 30));
 		desertBiomes.add(new BiomeEntry(BiomeGenBase.icePlains, 20));
-		desertBiomes.add(new BiomeEntry(BiomeGenBase.savanna, 20));
+		desertBiomes.add(new BiomeEntry(elvenForest, 20));
 
 	}
 
@@ -46,34 +51,34 @@ public class CustomGenLayerBiome extends GenLayer {
 
 				if (isBiomeOceanic(k1)) {
 					aint1[j1 + i1 * par3] = k1;
-				} else if (k1 == BiomeGenBase.plains.biomeID) {
+				} else if (k1 == elvenPlains.biomeID) {
 					aint1[j1 + i1 * par3] = k1;
 				} else if (k1 == 1) {
 					if (l1 > 0) {
 						if (this.nextInt(3) == 0) {
 							aint1[j1 + i1 * par3] = BiomeGenBase.icePlains.biomeID;
 						} else {
-							aint1[j1 + i1 * par3] = BiomeGenBase.mesaPlateau_F.biomeID;
+							aint1[j1 + i1 * par3] = elvenForest.biomeID;
 						}
 					} else {
 						aint1[j1 + i1 * par3] = ((BiomeEntry) WeightedRandom.getItem(this.desertBiomes, (int) (this.nextLong(WeightedRandom.getTotalWeight(this.desertBiomes) / 10) * 10))).biome.biomeID;
 					}
 				} else if (k1 == 2) {
 					if (l1 > 0) {
-						aint1[j1 + i1 * par3] = BiomeGenBase.plains.biomeID;
+						aint1[j1 + i1 * par3] = elvenPlains.biomeID;
 					} else {
 						aint1[j1 + i1 * par3] = ((BiomeEntry) WeightedRandom.getItem(this.desertBiomes, (int) (this.nextLong(WeightedRandom.getTotalWeight(this.desertBiomes) / 10) * 10))).biome.biomeID;
 					}
 				} else if (k1 == 3) {
 					if (l1 > 0) {
-						aint1[j1 + i1 * par3] = BiomeGenBase.plains.biomeID;
+						aint1[j1 + i1 * par3] = elvenPlains.biomeID;
 					} else {
 						aint1[j1 + i1 * par3] = ((BiomeEntry) WeightedRandom.getItem(this.desertBiomes, (int) (this.nextLong(WeightedRandom.getTotalWeight(this.desertBiomes) / 10) * 10))).biome.biomeID;
 					}
 				} else if (k1 == 4) {
 					aint1[j1 + i1 * par3] = ((BiomeEntry) WeightedRandom.getItem(this.desertBiomes, (int) (this.nextLong(WeightedRandom.getTotalWeight(this.desertBiomes) / 10) * 10))).biome.biomeID;
 				} else {
-					aint1[j1 + i1 * par3] = BiomeGenBase.plains.biomeID;
+					aint1[j1 + i1 * par3] = elvenPlains.biomeID;
 				}
 			}
 		}

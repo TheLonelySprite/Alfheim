@@ -2,11 +2,12 @@ package com.github.thelonelysprite.alfheim.dimension;
 
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkProvider;
+import vazkii.botania.api.item.IFlowerlessWorld;
 
 /**
  * Created by justin on 06/10/2014.
  */
-public class WorldProviderAlfheim extends WorldProvider {
+public class WorldProviderAlfheim extends WorldProvider implements IFlowerlessWorld {
     /**
      * Returns the dimension's name, e.g. "The End", "Nether", or "Overworld".
      */
@@ -49,4 +50,11 @@ public class WorldProviderAlfheim extends WorldProvider {
     }
 
 
+    /**
+     * @return False to not have flowers generate, True to have them generate
+     */
+    @Override
+    public boolean generateFlowers() {
+        return false;
+    }
 }
