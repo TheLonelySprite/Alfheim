@@ -1,5 +1,6 @@
 package com.github.thelonelysprite.alfheim.dimension;
 
+import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkProvider;
 import vazkii.botania.api.item.IFlowerlessWorld;
@@ -54,7 +55,7 @@ public class WorldProviderAlfheim extends WorldProvider implements IFlowerlessWo
      * @return False to not have flowers generate, True to have them generate
      */
     @Override
-    public boolean generateFlowers() {
+    public boolean generateFlowers(World world) {
         return false;
     }
 }
