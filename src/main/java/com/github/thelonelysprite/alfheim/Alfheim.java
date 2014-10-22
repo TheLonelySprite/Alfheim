@@ -6,9 +6,7 @@ import com.github.thelonelysprite.alfheim.handlers.ForgeEventHandler;
 import com.github.thelonelysprite.alfheim.items.AddonItems;
 import com.github.thelonelysprite.alfheim.lexicon.AddonData;
 import com.github.thelonelysprite.alfheim.proxy.CommonProxy;
-import com.github.thelonelysprite.alfheim.recipes.CraftingRecipes;
-import com.github.thelonelysprite.alfheim.recipes.FurnaceRecipes;
-import com.github.thelonelysprite.alfheim.recipes.ModComp;
+import com.github.thelonelysprite.alfheim.recipes.*;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -44,6 +42,8 @@ public class Alfheim {
         FurnaceRecipes.init();
         ModComp.init();
         AddonData.init();
+        InfusionRecipes.init();
+        RunicRecipes.init();
         //Constants.log.info(AddonItems.exampleItem.getUnlocalizedName());
     }
 

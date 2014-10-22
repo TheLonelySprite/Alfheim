@@ -19,5 +19,11 @@ public class Constants {
     public static final java.lang.String ENTRY_PORTAL2 = "alfheim:textures/gui/entries/portal2.png";
     public static final java.lang.String ENTRY_PORTAL3 = "alfheim:textures/gui/entries/portal3.png";
     public static final java.lang.String ENTRY_PORTAL4 = "alfheim:textures/gui/entries/portal4.png";
-
+    public static final String[] ALFHEIM_RESOURCE_NAMES = new String[] {
+            "dragonDrop",
+            "pixieDrop",
+            "dreamDrop",
+            "gaiaMix",
+            "gaiaSteel"
+    };
 }

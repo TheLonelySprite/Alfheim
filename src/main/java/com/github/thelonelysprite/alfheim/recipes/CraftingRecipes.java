@@ -2,6 +2,8 @@ package com.github.thelonelysprite.alfheim.recipes;
 
 import com.github.thelonelysprite.alfheim.Constants;
 import com.github.thelonelysprite.alfheim.blocks.AddonBlocks;
+import com.github.thelonelysprite.alfheim.items.AddonItem;
+import com.github.thelonelysprite.alfheim.items.AddonItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
@@ -17,6 +19,7 @@ import vazkii.botania.common.lib.LibOreDict;
 public class CraftingRecipes {
     public static IRecipe recipeSpiritPylon;
     public static IRecipe recipeImprovedGatewayCore;
+    public static  IRecipe recipeGaiaRing;
     public static void init() {
         // GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.book), "materialPaper", "materialPaper", "materialPaper", ModItems.exampleItem));
         // GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.exampleItem,10),  "A A", " B ", "A A", 'A', ModBlocks.exampleBlock, 'B',
@@ -25,6 +28,8 @@ public class CraftingRecipes {
         recipeSpiritPylon= BotaniaAPI.getLatestAddedRecipe();
         addOreDictRecipe(new ItemStack(AddonBlocks.alfPortal,1),"AAA", "ABA", "AAA",'B', LibOreDict.TERRA_STEEL,'A', LibOreDict.DREAM_WOOD);
         recipeImprovedGatewayCore= BotaniaAPI.getLatestAddedRecipe();
+        addOreDictRecipe(new ItemStack(AddonItems.gaiaRing),"AB ","B B"," B ", 'A', LibOreDict.LIFE_ESSENCE, 'B', new ItemStack(AddonItems.resource,1,4));
+        recipeGaiaRing=BotaniaAPI.getLatestAddedRecipe();
         Constants.log.info("Recipe added");
     }
 
