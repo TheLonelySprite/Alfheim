@@ -4,7 +4,8 @@ import com.github.thelonelysprite.alfheim.blocks.TileSpiritPylon;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
-import org.lwjgl.opengl.GL11;
+
+import static org.lwjgl.opengl.GL11.*;
 
 /**
  * Created by justin on 06/10/2014.
@@ -52,28 +53,28 @@ public class RenderPylonItem implements IItemRenderer {
 
         switch (type) {
             case INVENTORY:
-                GL11.glPushMatrix();
-                GL11.glTranslatef(-0.5F, -0.7F, -0.5F);
+                glPushMatrix();
+                glTranslatef(-0.5F, -0.7F, -0.5F);
                 TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileSpiritPylon(), 0.0D, 0.0D, 0.0D, 0.0F);
-                GL11.glPopMatrix();
+                glPopMatrix();
                 break;
             case ENTITY:
-                GL11.glPushMatrix();
-                GL11.glTranslatef(-0.5F, -0.0F, -0.5F);
+                glPushMatrix();
+                glTranslatef(-0.5F, -0.0F, -0.5F);
                 TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileSpiritPylon(), 0.0D, 0.0D, 0.0D, 0.0F);
-                GL11.glPopMatrix();
+                glPopMatrix();
                 break;
             case EQUIPPED_FIRST_PERSON:
-                GL11.glPushMatrix();
-                GL11.glTranslatef(-0.5F, -0.0F, -0.0F);
+                glPushMatrix();
+                glTranslatef(-0.5F, -0.0F, -0.0F);
                 TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileSpiritPylon(), 0.0D, 0.0D, 0.0D, 0.0F);
-                GL11.glPopMatrix();
+                glPopMatrix();
                 break;
             case EQUIPPED:
-                GL11.glPushMatrix();
-                GL11.glTranslatef(0.0F, -0.0F, -0.0F);
+                glPushMatrix();
+                glTranslatef(0.0F, -0.0F, -0.0F);
                 TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileSpiritPylon(), 0.0D, 0.0D, 0.0D, 0.0F);
-                GL11.glPopMatrix();
+                glPopMatrix();
                 break;
         }
 

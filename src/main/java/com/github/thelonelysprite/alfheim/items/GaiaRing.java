@@ -23,7 +23,7 @@ public class GaiaRing extends AddonBauble implements IManaItem {
     private static final String TAG_MANA = "mana";
 
     public GaiaRing() {
-        super("GaiaRing");
+        super("gaiaRing");
         setMaxDamage(1000);
         setNoRepair();
     }

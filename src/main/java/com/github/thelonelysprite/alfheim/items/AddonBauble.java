@@ -22,7 +22,6 @@ public abstract class AddonBauble extends AddonItem implements IBauble {
     public AddonBauble(String name) {
         super(name);
         setMaxStackSize(1);
-        setUnlocalizedName(name);
     }
 
     @Override

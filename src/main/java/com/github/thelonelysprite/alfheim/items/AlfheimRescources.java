@@ -42,7 +42,7 @@ public class AlfheimRescources extends AddonItem implements IElvenItem {
     }
     @Override
     public String getUnlocalizedName(ItemStack par1ItemStack) {
-        return "item." + Constants.ALFHEIM_RESOURCE_NAMES[Math.min(types - 1, par1ItemStack.getItemDamage())];
+        return "item.alfheim:" + Constants.ALFHEIM_RESOURCE_NAMES[Math.min(types - 1, par1ItemStack.getItemDamage())];
     }
 
     @Override

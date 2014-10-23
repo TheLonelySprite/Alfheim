@@ -1,6 +1,18 @@
-tile.examplemod:block.name=Test Block
-item.examplemod:name.name=Test Item
-itemGroup.examplemod=Test Mod
+entity.ItemFrame.name=Item Frame
+
+
+itemGroup.alfheim=Alfheim
+
+item.alfheim:dragonDrop.name=Dragon Scale
+item.alfheim:pixieDrop.name=Pixie Wing
+item.alfheim:dreamDrop.name=Dream Leaf
+item.alfheim:gaiaMix.name=Gaia Mix
+item.alfheim:gaiaSteel.name=GaiaSteel
+item.alfheim:gaiaRing.name=Band of Gaia
+
+tile.alfheim:SpiritPylon0.name=Spirit Pylon
+tile.alfheim:Portal0.name=Improved Elven Gateway Core
+tile.alfheim:dreamLeaves0.name=Dream Leaves
 
 alfheim.category.advancedAlfomancy=Advanced Alfomancy
 
