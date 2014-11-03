@@ -26,4 +26,6 @@ public abstract class CommonProxy {
     public abstract void registerItemRenderers();
 
     public abstract void  registerTileRenderers();
+
+    public abstract void registerEntityRenderers();
 }

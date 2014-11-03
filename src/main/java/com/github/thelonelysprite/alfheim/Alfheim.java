@@ -2,6 +2,8 @@ package com.github.thelonelysprite.alfheim;
 
 import com.github.thelonelysprite.alfheim.blocks.AddonBlocks;
 import com.github.thelonelysprite.alfheim.dimension.WorldProviderAlfheim;
+import com.github.thelonelysprite.alfheim.entities.ElvenDragon;
+import com.github.thelonelysprite.alfheim.entities.ElvenPixie;
 import com.github.thelonelysprite.alfheim.handlers.ForgeEventHandler;
 import com.github.thelonelysprite.alfheim.items.AddonItems;
 import com.github.thelonelysprite.alfheim.lexicon.AddonData;
@@ -13,10 +15,15 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
+
+import java.util.Random;
 
 @Mod(modid = Constants.MODID, version = Constants.VERSION, dependencies = Constants.DEPENDENCIES)
 public class Alfheim {
@@ -41,9 +48,11 @@ public class Alfheim {
         CraftingRecipes.init();
         FurnaceRecipes.init();
         ModComp.init();
+        AddonData.init();
         InfusionRecipes.init();
         RunicRecipes.init();
-        AddonData.init();
+        registerEntity(ElvenDragon.class, "ElvenDragon");
+        registerEntity(ElvenPixie.class,"ElvenPixie");
         //Constants.log.info(AddonItems.exampleItem.getUnlocalizedName());
     }
 
@@ -54,11 +63,25 @@ public class Alfheim {
         proxy.registerNetworkStuff();
         proxy.registerTileEntities();
         proxy.registerTileRenderers();
+        proxy.registerEntityRenderers();
         DimensionManager.registerProviderType(-98, WorldProviderAlfheim.class, true);
         DimensionManager.registerDimension(-98,-98);
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+
+    }
+    @SuppressWarnings("unchecked")
+    public static void registerEntity(Class entityClass, String name) {
+        int entityID = EntityRegistry.findGlobalUniqueEntityId();
+        long seed = name.hashCode();
+        Random rand = new Random(seed);
+        int primaryColor = rand.nextInt() * 16777215;
+        int secondaryColor = rand.nextInt() * 16777215;
+        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
+        EntityRegistry.registerModEntity(entityClass, name, entityID, instance, 64, 1, true);
+        EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primaryColor, secondaryColor));
+
     }
 }
