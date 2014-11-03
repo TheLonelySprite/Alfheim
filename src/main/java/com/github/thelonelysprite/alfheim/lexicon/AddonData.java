@@ -10,10 +10,7 @@ import vazkii.botania.api.lexicon.LexiconCategory;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.common.lexicon.ALexiconEntry;
 import vazkii.botania.common.lexicon.LexiconData;
-import vazkii.botania.common.lexicon.page.PageCraftingRecipe;
-import vazkii.botania.common.lexicon.page.PageImage;
-import vazkii.botania.common.lexicon.page.PageRuneRecipe;
-import vazkii.botania.common.lexicon.page.PageText;
+import vazkii.botania.common.lexicon.page.*;
 
 /**
  * Created by justin on 18/10/2014.
@@ -23,6 +20,7 @@ public class AddonData {
     static LexiconEntry portal;
     static LexiconEntry notes;
     static LexiconEntry gaiaSteel;
+    static LexiconEntry gaiaSteelEquipment;
     static String type = "advancedAlfomancy";
     public static KnowledgeType aaKnowledge;
     public static void init(){
@@ -38,8 +36,12 @@ public class AddonData {
         notes.setLexiconPages(new PageText("0"),new PageText("1"),new PageText("2"),new PageText("3"));
         BotaniaAPI.addEntry(notes,LexiconData.categoryAlfhomancy);
 
-        gaiaSteel = new ElvenEntry("gaiaSteel");
+        gaiaSteel = new AlfheimEntry("gaiaSteel");
         gaiaSteel.setPriority().setLexiconPages(new PageText("0"), new PageRuneRecipe("1",RunicRecipes.recipeGaiaSteel));
         BotaniaAPI.addEntry(gaiaSteel, advancedAlfomancy);
+
+        gaiaSteelEquipment = new AlfheimEntry("gaiaSteelEquipment");
+        gaiaSteelEquipment.setPriority().setLexiconPages(new PageText("0"),new PageCraftingRecipe("1",CraftingRecipes.recipeGaiaHelm),new PageCraftingRecipe("2",CraftingRecipes.recipeGaiaChest),new PageCraftingRecipe("3",CraftingRecipes.recipeGaiaLegs),new PageCraftingRecipe("4",CraftingRecipes.recipeGaiaBoots));
+        BotaniaAPI.addEntry(gaiaSteelEquipment,advancedAlfomancy);
     }
 }
