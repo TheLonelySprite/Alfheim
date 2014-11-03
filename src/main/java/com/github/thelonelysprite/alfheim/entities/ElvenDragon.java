@@ -1,25 +1,10 @@
 package com.github.thelonelysprite.alfheim.entities;
 
-import java.util.Iterator;
-import java.util.List;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockEndPortal;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
-import net.minecraft.entity.boss.EntityDragonPart;
-import net.minecraft.entity.item.EntityEnderCrystal;
-import net.minecraft.entity.item.EntityXPOrb;
-import net.minecraft.entity.monster.IMob;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
-import net.minecraft.util.Vec3;
-import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class ElvenDragon extends EntityFlying
+public class ElvenDragon extends EntityFlyingCreature
 {
 
     public int deathTicks;

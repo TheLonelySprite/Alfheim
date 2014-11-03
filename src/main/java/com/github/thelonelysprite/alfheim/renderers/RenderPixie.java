@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.ARBShaderObjects;
 import org.lwjgl.opengl.GL11;
 import vazkii.botania.client.core.helper.ShaderHelper;
-import vazkii.botania.client.core.helper.ShaderHelper.ShaderCallback;
+import vazkii.botania.api.internal.ShaderCallback;
 import vazkii.botania.client.lib.LibResources;
 import vazkii.botania.client.model.ModelPixie;
 import vazkii.botania.common.entity.EntityPixie;
@@ -41,11 +41,9 @@ public class RenderPixie extends RenderLiving {
     @Override
     public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9) {
         ElvenPixie pixie = (ElvenPixie) par1Entity;
-        if (pixie.getType() == 1)
-            ShaderHelper.useShader(ShaderHelper.doppleganger, callback);
         super.doRender(par1Entity, par2, par4, par6, par8, par9);
-        if (pixie.getType() == 1)
-            ShaderHelper.releaseShader();
+
+
     }
 
     protected int setPixieBrightness(ElvenPixie par1EntityPixie, int par2, float par3) {
