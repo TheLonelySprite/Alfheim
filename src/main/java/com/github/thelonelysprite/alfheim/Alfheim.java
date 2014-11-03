@@ -41,9 +41,9 @@ public class Alfheim {
         CraftingRecipes.init();
         FurnaceRecipes.init();
         ModComp.init();
-        AddonData.init();
         InfusionRecipes.init();
         RunicRecipes.init();
+        AddonData.init();
         //Constants.log.info(AddonItems.exampleItem.getUnlocalizedName());
     }
 
@@ -60,6 +60,5 @@ public class Alfheim {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
     }
 }

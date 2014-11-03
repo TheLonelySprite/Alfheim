@@ -2,6 +2,7 @@ package com.github.thelonelysprite.alfheim.lexicon;
 
 import com.github.thelonelysprite.alfheim.Constants;
 import com.github.thelonelysprite.alfheim.recipes.CraftingRecipes;
+import com.github.thelonelysprite.alfheim.recipes.RunicRecipes;
 import net.minecraft.util.EnumChatFormatting;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.lexicon.KnowledgeType;
@@ -11,6 +12,7 @@ import vazkii.botania.common.lexicon.ALexiconEntry;
 import vazkii.botania.common.lexicon.LexiconData;
 import vazkii.botania.common.lexicon.page.PageCraftingRecipe;
 import vazkii.botania.common.lexicon.page.PageImage;
+import vazkii.botania.common.lexicon.page.PageRuneRecipe;
 import vazkii.botania.common.lexicon.page.PageText;
 
 /**
@@ -20,6 +22,7 @@ public class AddonData {
     static LexiconCategory advancedAlfomancy;
     static LexiconEntry portal;
     static LexiconEntry notes;
+    static LexiconEntry gaiaSteel;
     static String type = "advancedAlfomancy";
     public static KnowledgeType aaKnowledge;
     public static void init(){
@@ -35,6 +38,8 @@ public class AddonData {
         notes.setLexiconPages(new PageText("0"),new PageText("1"),new PageText("2"),new PageText("3"));
         BotaniaAPI.addEntry(notes,LexiconData.categoryAlfhomancy);
 
-
+        gaiaSteel = new ElvenEntry("gaiaSteel");
+        gaiaSteel.setPriority().setLexiconPages(new PageText("0"), new PageRuneRecipe("1",RunicRecipes.recipeGaiaSteel));
+        BotaniaAPI.addEntry(gaiaSteel, advancedAlfomancy);
     }
 }
