@@ -9,7 +9,6 @@ import com.github.thelonelysprite.alfheim.items.AddonItems;
 import com.github.thelonelysprite.alfheim.renderers.*;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
-
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
 

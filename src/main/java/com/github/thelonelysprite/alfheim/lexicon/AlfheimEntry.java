@@ -1,7 +1,6 @@
 package com.github.thelonelysprite.alfheim.lexicon;
 
 import vazkii.botania.api.lexicon.IAddonEntry;
-import vazkii.botania.api.lexicon.LexiconCategory;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.lexicon.LexiconPage;
 

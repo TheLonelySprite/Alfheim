@@ -4,7 +4,6 @@ package com.github.thelonelysprite.alfheim.blocks;
  * Created by justin on 06/10/2014.
  */
 
-import com.github.thelonelysprite.alfheim.Teleport;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;

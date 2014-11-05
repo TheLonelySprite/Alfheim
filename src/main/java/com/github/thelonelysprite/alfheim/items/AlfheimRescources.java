@@ -4,14 +4,11 @@ import com.github.thelonelysprite.alfheim.Constants;
 import com.github.thelonelysprite.alfheim.IconHelper;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import vazkii.botania.api.recipe.IElvenItem;
-import vazkii.botania.api.recipe.IFlowerComponent;
 import vazkii.botania.common.Botania;
-import vazkii.botania.common.lib.LibItemNames;
 
 import java.awt.*;
 import java.util.List;

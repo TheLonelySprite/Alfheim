@@ -8,7 +8,6 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
-import vazkii.botania.client.lib.LibResources;
 public final class IconHelper {
     public static IIcon forName(IIconRegister ir, String name) {
         return ir.registerIcon("alfheim:" + name);

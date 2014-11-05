@@ -1,6 +1,7 @@
 package com.github.thelonelysprite.alfheim.items;
 
 import com.github.thelonelysprite.alfheim.items.equipment.armour.*;
+import com.github.thelonelysprite.alfheim.items.equipment.tools.ItemGaiaSteelPickaxe;
 import com.github.thelonelysprite.alfheim.items.equipment.tools.ItemGaiaSteelSword;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -22,6 +23,7 @@ public class AddonItems {
     public static Item gaiaSteelLegs;
     public static Item gaiaSteelBoots;
     public static Item gaiaSteelSword;
+    public static Item gaiaShatterer;
 
     public static void init() {
         exampleItem = new AddonItem("name");
@@ -33,5 +35,6 @@ public class AddonItems {
         gaiaSteelLegs = new ItemGaiaSteelLegs();
         gaiaSteelBoots = new ItemGaiaSteelBoots();
         gaiaSteelSword = new ItemGaiaSteelSword();
+        gaiaShatterer = new ItemGaiaSteelPickaxe();
     }
 }

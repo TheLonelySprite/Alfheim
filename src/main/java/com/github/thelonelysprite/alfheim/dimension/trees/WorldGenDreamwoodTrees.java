@@ -3,7 +3,6 @@ package com.github.thelonelysprite.alfheim.dimension.trees;
 /**
  * Created by justin on 19/10/2014.
  */
-import java.util.Random;
 
 import com.github.thelonelysprite.alfheim.blocks.AddonBlocks;
 import net.minecraft.block.Block;
@@ -11,10 +10,11 @@ import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraftforge.common.util.ForgeDirection;
 import vazkii.botania.common.block.ModBlocks;
+
+import java.util.Random;
 
 public class WorldGenDreamwoodTrees extends WorldGenTrees
 {

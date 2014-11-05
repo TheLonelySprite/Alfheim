@@ -1,6 +1,5 @@
 package com.github.thelonelysprite.alfheim.lexicon;
 
-import net.minecraft.util.EnumChatFormatting;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.lexicon.IAddonEntry;
 import vazkii.botania.api.lexicon.LexiconEntry;

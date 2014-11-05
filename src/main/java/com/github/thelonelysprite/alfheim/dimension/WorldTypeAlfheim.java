@@ -6,7 +6,6 @@ import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.GenLayerZoom;
-import net.minecraftforge.common.DimensionManager;
 
 public class WorldTypeAlfheim extends WorldType {
 	public WorldTypeAlfheim() {

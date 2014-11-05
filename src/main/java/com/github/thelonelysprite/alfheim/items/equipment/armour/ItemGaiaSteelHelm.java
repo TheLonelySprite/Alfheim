@@ -1,6 +1,5 @@
 package com.github.thelonelysprite.alfheim.items.equipment.armour;
 
-import com.github.thelonelysprite.alfheim.Constants;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;

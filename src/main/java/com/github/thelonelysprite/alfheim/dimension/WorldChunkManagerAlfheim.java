@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import static net.minecraft.world.biome.BiomeGenBase.*;
+import static net.minecraft.world.biome.BiomeGenBase.mesa;
 
 /**
  * Created by justin on 06/10/2014.

@@ -1,5 +1,6 @@
 package com.github.thelonelysprite.alfheim.items.equipment.tools;
 
+import com.github.thelonelysprite.alfheim.Alfheim;
 import com.github.thelonelysprite.alfheim.Constants;
 import com.github.thelonelysprite.alfheim.IconHelper;
 import com.github.thelonelysprite.alfheim.items.AddonItems;
@@ -16,13 +17,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.mana.IManaUsingItem;
 import vazkii.botania.api.mana.ManaItemHandler;
-import vazkii.botania.common.core.BotaniaCreativeTab;
 import vazkii.botania.common.item.ModItems;
 import vazkii.botania.common.item.equipment.tool.ToolCommons;
-import vazkii.botania.common.lib.LibItemNames;
 
 /**
  * Created by justin on 03/11/2014.
@@ -38,7 +36,7 @@ public class ItemGaiaSteelSword extends ItemSword implements IManaUsingItem {
 
     public ItemGaiaSteelSword(ToolMaterial mat, String name) {
         super(mat);
-        setCreativeTab(BotaniaCreativeTab.INSTANCE);
+        setCreativeTab(Alfheim.Tab);
         setUnlocalizedName(name);
     }
 

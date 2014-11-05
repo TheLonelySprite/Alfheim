@@ -8,9 +8,11 @@ import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.lexicon.KnowledgeType;
 import vazkii.botania.api.lexicon.LexiconCategory;
 import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.common.lexicon.ALexiconEntry;
 import vazkii.botania.common.lexicon.LexiconData;
-import vazkii.botania.common.lexicon.page.*;
+import vazkii.botania.common.lexicon.page.PageCraftingRecipe;
+import vazkii.botania.common.lexicon.page.PageImage;
+import vazkii.botania.common.lexicon.page.PageRuneRecipe;
+import vazkii.botania.common.lexicon.page.PageText;
 
 /**
  * Created by justin on 18/10/2014.

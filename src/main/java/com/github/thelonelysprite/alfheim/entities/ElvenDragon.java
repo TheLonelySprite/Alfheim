@@ -1,6 +1,5 @@
 package com.github.thelonelysprite.alfheim.entities;
 
-import net.minecraft.entity.*;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 

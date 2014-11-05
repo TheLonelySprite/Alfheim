@@ -1,7 +1,6 @@
 package com.github.thelonelysprite.alfheim.dimension.biomes;
 
 import net.minecraft.entity.passive.EntityHorse;
-import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 
 /**
