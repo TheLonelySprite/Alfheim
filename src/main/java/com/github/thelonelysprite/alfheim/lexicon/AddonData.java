@@ -23,6 +23,8 @@ public class AddonData {
     static LexiconEntry notes;
     static LexiconEntry gaiaSteel;
     static LexiconEntry gaiaSteelEquipment;
+
+
     static String type = "advancedAlfomancy";
     public static KnowledgeType aaKnowledge;
     public static void init(){
@@ -43,7 +45,7 @@ public class AddonData {
         BotaniaAPI.addEntry(gaiaSteel, advancedAlfomancy);
 
         gaiaSteelEquipment = new AlfheimEntry("gaiaSteelEquipment");
-        gaiaSteelEquipment.setPriority().setLexiconPages(new PageText("0"),new PageCraftingRecipe("1",CraftingRecipes.recipeGaiaHelm),new PageCraftingRecipe("2",CraftingRecipes.recipeGaiaChest),new PageCraftingRecipe("3",CraftingRecipes.recipeGaiaLegs),new PageCraftingRecipe("4",CraftingRecipes.recipeGaiaBoots));
+        gaiaSteelEquipment.setPriority().setLexiconPages(new PageText("0"),new PageCraftingRecipe("1",CraftingRecipes.recipeGaiaHelm),new PageCraftingRecipe("2",CraftingRecipes.recipeGaiaChest),new PageCraftingRecipe("3",CraftingRecipes.recipeGaiaLegs),new PageCraftingRecipe("4",CraftingRecipes.recipeGaiaBoots),new PageCraftingRecipe("5",CraftingRecipes.recipeGaiaShatterer),new PageCraftingRecipe("6",CraftingRecipes.recipeGaiaSword));
         BotaniaAPI.addEntry(gaiaSteelEquipment,advancedAlfomancy);
     }
 }

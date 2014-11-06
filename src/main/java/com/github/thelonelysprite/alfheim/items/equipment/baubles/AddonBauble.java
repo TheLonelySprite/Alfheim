@@ -1,9 +1,10 @@
-package com.github.thelonelysprite.alfheim.items;
+package com.github.thelonelysprite.alfheim.items.equipment.baubles;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import baubles.common.container.InventoryBaubles;
 import baubles.common.lib.PlayerHandler;
+import com.github.thelonelysprite.alfheim.items.AddonItem;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.GuiScreen;

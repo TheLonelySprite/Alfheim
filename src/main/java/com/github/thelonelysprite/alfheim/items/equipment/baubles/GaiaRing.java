@@ -1,6 +1,7 @@
-package com.github.thelonelysprite.alfheim.items;
+package com.github.thelonelysprite.alfheim.items.equipment.baubles;
 
 import baubles.api.BaubleType;
+import com.github.thelonelysprite.alfheim.items.equipment.baubles.AddonBauble;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;

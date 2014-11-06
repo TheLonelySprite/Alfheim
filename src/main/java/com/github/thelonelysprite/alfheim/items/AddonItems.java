@@ -1,6 +1,7 @@
 package com.github.thelonelysprite.alfheim.items;
 
 import com.github.thelonelysprite.alfheim.items.equipment.armour.*;
+import com.github.thelonelysprite.alfheim.items.equipment.baubles.GaiaRing;
 import com.github.thelonelysprite.alfheim.items.equipment.tools.ItemGaiaSteelPickaxe;
 import com.github.thelonelysprite.alfheim.items.equipment.tools.ItemGaiaSteelSword;
 import net.minecraft.item.Item;

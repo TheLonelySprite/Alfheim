@@ -3,12 +3,14 @@ package com.github.thelonelysprite.alfheim.recipes;
 import com.github.thelonelysprite.alfheim.Constants;
 import com.github.thelonelysprite.alfheim.blocks.AddonBlocks;
 import com.github.thelonelysprite.alfheim.items.AddonItems;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import vazkii.botania.common.block.ModBlocks;
+import vazkii.botania.common.item.ModItems;
 import vazkii.botania.common.lib.LibOreDict;
 
 /**
@@ -23,6 +25,8 @@ public class CraftingRecipes {
     public static IRecipe recipeGaiaChest;
     public static IRecipe recipeGaiaLegs;
     public static IRecipe recipeGaiaBoots;
+    public static IRecipe recipeGaiaShatterer;
+    public static IRecipe recipeGaiaSword;
 
     public static void init() {
         // GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.book), "materialPaper", "materialPaper", "materialPaper", ModItems.exampleItem));
@@ -36,6 +40,8 @@ public class CraftingRecipes {
         recipeGaiaChest = addOreDictRecipe(new ItemStack(AddonItems.gaiaSteelChest),"A A","AAA","AAA",'A',gaiaSteel);
         recipeGaiaLegs = addOreDictRecipe(new ItemStack(AddonItems.gaiaSteelLegs),"AAA","A A","A A",'A',gaiaSteel);
         recipeGaiaBoots = addOreDictRecipe(new ItemStack(AddonItems.gaiaSteelBoots),"A A","A A",'A',gaiaSteel);
+        recipeGaiaShatterer = addOreDictRecipe(new ItemStack(AddonItems.gaiaShatterer),"AAA"," B "," C ",'A',gaiaSteel,'B', ModItems.terraPick, 'C', "stickWood");
+        recipeGaiaSword = addOreDictRecipe(new ItemStack(AddonItems.gaiaSteelSword),"A","A","B",'A',gaiaSteel,'B',"stickWood");
         Constants.log.info("Recipe added");
     }
 
